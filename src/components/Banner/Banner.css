@@ -1,0 +1,15 @@
+/* Banner.css */
+.banner-container {
+    position: relative;
+    width: 100%;
+    height: 650px; /* Adjust the height as needed */
+    overflow: hidden;
+  }
+  
+  .banner-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the container while maintaining aspect ratio */
+    object-position: top; /* Crops the image from the top */
+  }
+  

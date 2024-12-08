@@ -1,0 +1,185 @@
+/* General Container Styling */
+.about-container {
+    max-width: 2600px;
+    max-height: 11400px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: hsl(229, 35%, 94%); /* White background */
+}
+
+/* Breadcrumbs styling */
+.breadcrumbs-container {
+    margin-bottom: 20px;
+}
+
+/* Intro Section Styling */
+.intro-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+    background-color: #e0e0f0; /* Light blue background */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.intro-text {
+    flex: 1;
+    min-width: 400px;
+}
+
+.intro-text .title {
+    font-size: 2rem;
+    color: #5e4b8a; /* Purple */
+}
+
+.highlight {
+    color: #007acc; /* Blue */
+    font-weight: bold;
+}
+
+.intro-image {
+    max-width: 480px;
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Services Section Styling */
+.services-section {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.services-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #5e4b8a; /* Purple */
+}
+
+.services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.service-card {
+    flex: 1;
+    max-width: 320px;
+    padding: 20px;
+    background-color: #ffffff; /* White */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.service-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.service-card img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: transform 0.3s;
+}
+
+.service-card img:hover {
+    transform: scale(1.1);
+}
+
+.service-card h3 {
+    font-size: 1.2rem;
+    color: #5e4b8a; /* Purple */
+    margin-bottom: 5px;
+}
+
+/* Qualities Section Styling */
+.qualities-section {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.qualities-section h2 {
+    font-size: 1.8rem;
+    color: #5e4b8a; /* Purple */
+    margin-bottom: 20px;
+}
+
+.qualities-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.qualities-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #e0e0f0; /* Light blue background */
+    padding: 10px 15px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+
+.qualities-list li:hover {
+    background-color: #d0d0e0; /* Slightly darker blue */
+}
+
+.qualities-list li::before {
+    content: '✓';
+    color: #5e4b8a; /* Purple */
+    font-weight: bold;
+}
+
+/* Experience Section Styling */
+.experience-section {
+    margin-top: 40px;
+    text-align: center;
+    background-color: #e0e0f0; /* Light blue background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.experience-section h2 {
+    font-size: 1.8rem;
+    color: #5e4b8a; /* Purple */
+    margin-bottom: 10px;
+}
+
+/* Continue Shopping Button Styling */
+.continue-link {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.continue-button {
+    background-color: #5e4b8a; /* Purple */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.continue-button:hover {
+    background-color: #47365a; /* Darker purple */
+    transform: scale(1.05);
+}

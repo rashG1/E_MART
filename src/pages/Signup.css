@@ -1,0 +1,129 @@
+/* Signup Page Container */
+.signup-page {
+    background-image: url('/public/b2.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+}
+
+/* Signup Container */
+.signup-container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Form Header */
+.signup-header {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Form Labels */
+.signup-label {
+    display: block;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 6px;
+}
+
+/* Form Inputs */
+.signup-input,
+.signup-select {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    transition: border-color 0.2s ease-in-out;
+}
+
+/* Input Focus State */
+.signup-input:focus,
+.signup-select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Signup Button */
+.signup-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.signup-button:hover {
+    background-color: #0056b3;
+}
+
+/* Message Styling */
+.signup-message {
+    text-align: center;
+    color: green;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* Signup Footer Link */
+.signup-footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #555;
+}
+
+.signup-footer a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.signup-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Add spacing between form fields */
+.signup-form div {
+    margin-bottom: 20px;
+}
+
+/* Adjust button margin on step 2 */
+.signup-button + .signup-button {
+    margin-top: 10px;
+}
+
+/* Media Queries for Mobile */
+@media (max-width: 480px) {
+    .signup-container {
+        padding: 20px;
+    }
+
+    .signup-header {
+        font-size: 20px;
+    }
+
+    .signup-input,
+    .signup-select {
+        font-size: 14px;
+    }
+
+    .signup-button {
+        font-size: 14px;
+    }
+}

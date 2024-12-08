@@ -1,0 +1,107 @@
+/* Set up the global theme and styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #f8f9fa; /* Fallback background color */
+    background: linear-gradient(135deg, #2e022e 10%,hwb(280 20% 36%) 40%,,#ffffff 20%,#2e0236 10%); /* Purple to white to gray gradient */
+    min-height: 100vh;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #ff5a5f;
+    transition: color 0.3s ease;
+  }
+  
+  a:hover {
+    color: #e94e4e;
+  }
+  
+  button {
+    background-color: #ff5a5f;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #e94e4e;
+  }
+  
+  /* Layout styling */
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Header and Footer */
+  header {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  footer {
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  footer p {
+    font-size: 14px;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    body {
+      font-size: 14px;
+    }
+  
+    header, footer {
+      text-align: center;
+      padding: 10px 0;
+    }
+  
+    .container {
+      width: 95%;
+    }
+  
+    h1 {
+      font-size: 24px;
+    }
+  
+    p {
+      font-size: 14px;
+    }
+  
+    button {
+      padding: 8px 16px;
+    }
+  }

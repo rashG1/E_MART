@@ -1,0 +1,216 @@
+.cart-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.cart-page h1 {
+    font-size: 2rem;
+    color: #5e4b8a;
+    margin-bottom: 20px;
+}
+
+.cart-items {
+    margin-bottom: 20px;
+}
+
+.cart-item {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: box-shadow 0.3s;
+}
+
+.cart-item:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.cart-item h3 {
+    font-size: 1.5rem;
+    color: #5e4b8a;
+    flex: 1;
+}
+
+.cart-item p {
+    margin: 5px;
+    color: #333;
+}
+
+.cart-item button {
+    background-color: #5e4b8a;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px; /* Adjusted padding for consistency */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin: 0 5px;
+    min-width: 50px; /* Set a minimum width */
+}
+
+.cart-item button:hover {
+    background-color: #47365a;
+    transform: scale(1.05);
+}
+
+.cart-actions {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.cart-actions h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.cart-actions button {
+    width: 100%;
+    max-width: 300px; /* Ensure buttons have a max width */
+    padding: 15px;
+    font-size: 1.2rem;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-bottom: 10px;
+}
+
+.cart-actions button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.cart-actions .buy-button {
+    background-color: #5e4b8a;
+}
+
+.cart-actions .buy-button:hover:not(:disabled) {
+    background-color: #47365a;
+    transform: scale(1.05);
+}
+
+.cart-actions .reset-button {
+    background-color: #ff4d4d;
+}
+
+.cart-actions .reset-button:hover {
+    background-color: #cc0000;
+    transform: scale(1.05);
+}
+
+/* New styles for blue mix purple */
+.blue-mix-purple {
+    background: linear-gradient(45deg, #5e4b8a, #4a90e2);
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.blue-mix-purple:hover {
+    background: linear-gradient(45deg, #4a90e2, #5e4b8a);
+    transform: scale(1.05);
+}
+
+.empty-cart-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.empty-cart-message p {
+    font-size: 1.3rem;
+    color: #5e4b8a;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+/* New styles for the route section */
+.route-section {
+    margin: 20px 0;
+    padding: 10px;
+    background-color: #e7e3f1;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.route-section h3 {
+    font-size: 1.8rem;
+    color: #5e4b8a;
+    margin-bottom: 10px;
+}
+
+.route-list {
+    list-style-type: none;
+    padding: 0;
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Arrange items in a column */
+    align-items: center; /* Center align items */
+}
+
+.route-item {
+    margin: 10px 0;
+}
+
+.route-item button {
+    width: 100%; /* Make buttons take full width */
+    max-width: 300px; /* Limit max width for uniformity */
+    padding: 10px 0; /* Vertical padding for consistent height */
+    font-size: 1rem; /* Consistent font size */
+    background-color: #5e4b8a;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.route-item button:hover {
+    background-color: #47365a;
+    transform: scale(1.05);
+}
+
+
+.route-button {
+    background-color: hsl(258, 71%, 54%); /* Primary color */
+    color: #fff; /* Text color */
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Full width within list item */
+    text-align: left; /* Align text to the left */
+}
+
+.route-button:hover {
+    background-color: #0056b3; /* Darker color on hover */
+}
+
+.route-button:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Focus outline */
+}
+
+.route-list {
+    list-style: none; /* Remove bullet points */
+    padding: 0;
+    margin: 0;
+}
+
+.route-list li {
+    margin-bottom: 10px; /* Spacing between buttons */
+}

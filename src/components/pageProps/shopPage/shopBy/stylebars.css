@@ -1,0 +1,106 @@
+/* UltimateProductStyles.css */
+
+/* General Container Styles */
+.container {
+    width: 100%;
+    background-color: white; /* Clean background */
+    padding: 2rem; /* Add more padding for spacious feel */
+    border-radius: 15px; /* More rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Deeper shadow for depth */
+}
+
+/* Title Styles */
+.nav-title {
+    font-size: 2rem; /* Larger font size for visibility */
+    color: #5e4b8a; /* Dark Purple */
+    margin-bottom: 2rem; /* More space below title */
+    font-weight: bold; /* Make title bold */
+}
+
+/* List Styles */
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; /* Space between items */
+}
+
+/* Product Card Styles */
+.product-card {
+    background-color: rgba(94, 75, 138, 0.05); /* Light purple background */
+    border-radius: 10px; /* Rounded corners */
+    padding: 1.5rem; /* Padding inside the card */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for effects */
+}
+
+/* Hover Effect for Product Cards */
+.product-card:hover {
+    transform: translateY(-5px); /* Lift effect */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+/* Product Image Styles */
+.product-image {
+    width: 100%; /* Full width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Rounded corners */
+}
+
+/* Product Title Styles */
+.product-title {
+    font-size: 1.5rem; /* Size for product title */
+    color: #333; /* Dark text color */
+    margin: 1rem 0; /* Margin above and below */
+    font-weight: bold; /* Bold title */
+}
+
+/* Product Price Styles */
+.product-price {
+    font-size: 1.25rem; /* Size for product price */
+    color: #5e4b8a; /* Dark Purple */
+    margin: 0.5rem 0; /* Margin for spacing */
+}
+
+/* Button Styles */
+.button {
+    text-align: center; /* Center the button text */
+    width: 100%; /* Full width for buttons */
+    color: white; /* Button text color */
+    padding: 12px; /* Padding for buttons */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #5e4b8a; /* Primary button color */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+}
+
+/* Button Hover Effects */
+.button:hover {
+    background-color: #4c3c6a; /* Darker purple on hover */
+    transform: scale(1.05); /* Slightly enlarge button */
+}
+
+/* Responsive Styles */
+@media (min-width: 768px) {
+    .product-card {
+        flex: 1; /* Allow product cards to grow */
+        margin: 1rem; /* Margin for spacing */
+        display: flex; /* Use flexbox */
+        flex-direction: column; /* Stack items */
+        align-items: center; /* Center align items */
+    }
+
+    .product-title {
+        font-size: 1.8rem; /* Larger title on larger screens */
+    }
+
+    .product-price {
+        font-size: 1.5rem; /* Larger price on larger screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .product-card {
+        padding: 1rem; /* Less padding on smaller screens */
+    }
+}

@@ -1,0 +1,20 @@
+/* Profile.css */
+
+.profile-page {
+    background-image: url('/public/b3.jpg'); /* Update the path to your background image */
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.profile-container {
+    background-color: rgba(255, 255, 255, 0.85); /* Semi-transparent background for readability */
+    padding: 124px;
+    border-radius: 8px;
+    max-width: 1600px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}

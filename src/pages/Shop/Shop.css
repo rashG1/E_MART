@@ -1,0 +1,77 @@
+/* Main container */
+.shop-container {
+    position: relative;
+    width: 100%;
+    height: 160vh; /* Keep height at 180% of the viewport */
+    overflow: hidden; /* Prevents overflow from child elements */
+}
+
+/* Background image styling */
+.background-image {
+    width: 100%;
+    height: 100%; /* Fill the entire height of the parent container */
+    position: absolute;
+    top: 0; /* Start from the top */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0; /* Places it below the content */
+    background-size: cover; /* Ensures the background image covers the entire area */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    animation: slide 30s infinite alternate; /* Animation for sliding effect */
+}
+
+/* Keyframes for sliding effect */
+@keyframes slide {
+    0% {
+        background-image: url('../../assets/images/banner/shop1.jpg'); /* Image 1 */
+    }
+    50% {
+        background-image: url('../../assets/images/banner/shop2.jpg'); /* Image 2 */
+    }
+    100% {
+        background-image: url('../../assets/images/banner/shop3.jpg'); /* Image 3 */
+    }
+}
+
+/* Content on top of the background */
+.content {
+    position: relative; /* Allows child elements to be positioned over the background */
+    z-index: 1; /* Places the content above the background */
+    padding: 0px; /* Add some padding for the content */
+}
+
+/* Title and description styles */
+.decorative-elements {
+    margin: 20px 0; /* Spacing around decorative elements */
+    text-align: center; /* Center the text */
+}
+
+.decorative-title {
+    font-size: 5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.decorative-description {
+    font-size: 4rem;
+    color: #3f0606; /* Adjust color as needed */
+    text-align: center; /* Center the description */
+}
+
+/* Additional styling for responsiveness (optional) */
+@media (max-width: 768px) {
+    .decorative-title {
+        font-size: 3rem; /* Smaller title on smaller screens */
+    }
+
+    .decorative-description {
+        font-size: 2rem; /* Smaller description on smaller screens */
+    }
+}
+
+/* Optional styling to prevent overlap */
+.decorative-elements {
+    position: relative; /* Ensure it's positioned above the background */
+    z-index: 2; /* Higher than background */
+}
