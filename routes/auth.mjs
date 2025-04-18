@@ -13,6 +13,8 @@ const JWT_SECRET = process.env.JWT_SECRET;
 // Signup Route
 router.post('/signup', async (req, res) => {
     const { Username, Name, Address, Contact, Type, City, Password } = req.body;
+    console.log(req.body); // Log the request body for debugging
+    console.log(dotenv); // Log the individual fields
 
     try {
         const hashedPassword = await bcrypt.hash(Password, 10);

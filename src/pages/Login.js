@@ -20,7 +20,7 @@ export default function Login() {
     setMessage(''); // Clear previous messages
 
     try {
-      const response = await api.post('/auth/login', credentials); // Use Axios API instance
+      const response = await api.post('/api/auth/login', credentials); // Use Axios API instance
 
       if (response.status === 200 && response.data.token) {
         localStorage.setItem('token', response.data.token); // Store JWT token
