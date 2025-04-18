@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './ProductPage.css';
 import api from '../../services/apiService';
+import {jwtDecode} from 'jwt-decode';
+
 
 const ProductPage = ({ category }) => {
     const [products, setProducts] = useState([]);
@@ -9,7 +11,7 @@ const ProductPage = ({ category }) => {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const response = await api.get(`/products/Type/${category}`);
+                const response = await api.get(`/api/products/Type/${category}`);
                 setProducts(response.data); // Set products from response data
             } catch (error) {
                 console.error('Error fetching products:', error);
@@ -18,21 +20,39 @@ const ProductPage = ({ category }) => {
 
         fetchProducts();
     }, [category]);
+    const getUserDetails = () => {
+        const token = localStorage.getItem("token");
+        if (token) {
+            try {
+                const decoded = jwtDecode(token);
+                return { customerId: decoded.userId, username: decoded.Username };
+            } catch (error) {
+                console.error("Invalid token:", error);
+                return null;
+            }
+        }
+        return null;
+    };
+    
 
     const handleAddToCart = (product) => {
-        const quantity = quantities[product.ProductID] || 1; // Default to 1 if not set
+        const quantity = quantities[product.ProductID] || 1;
         const cartItem = { id: product.ProductID, name: product.Name, price: product.Price, quantity };
-
-        // Get the current cart from local storage
-        const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
-        
-        // Add or update the item in the cart
+    
+        const userDetails = getUserDetails();
+        if (!userDetails) {
+            alert("You must be logged in to add to cart.");
+            return;
+        }
+    
+        const userCartKey = `cart_${userDetails.customerId}`;
+        const currentCart = JSON.parse(localStorage.getItem(userCartKey)) || [];
+    
         const updatedCart = currentCart.filter(item => item.id !== product.ProductID).concat(cartItem);
-        
-        // Save the updated cart back to local storage
-        localStorage.setItem('cart', JSON.stringify(updatedCart));
+        localStorage.setItem(userCartKey, JSON.stringify(updatedCart));
         alert(`${product.Name} added to cart!`);
     };
+    
 
     const handleQuantityChange = (productID, value) => {
         setQuantities((prevQuantities) => ({

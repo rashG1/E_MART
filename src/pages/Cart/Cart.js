@@ -13,15 +13,19 @@ const Cart = () => {
   const [selectedRoute, setSelectedRoute] = useState(null);
 
   useEffect(() => {
-    const savedCart = JSON.parse(localStorage.getItem("cart")) || [];
-    setCartItems(savedCart);
+    const userDetails = getUserDetails();
+    console.log(userDetails)
+    if (userDetails) {
+      const savedCart = JSON.parse(localStorage.getItem(`cart_${userDetails.customerId}`)) || [];
+      setCartItems(savedCart);
+    }
   }, []);
-
+  
   useEffect(() => {
     // Fetch cities when component loads
     const fetchCities = async () => {
       try {
-        const response = await api.get("/cities");
+        const response = await api.get("/api/cities");
         setCities(response.data);
       } catch (error) {
         console.error("Error fetching cities:", error);
@@ -51,7 +55,8 @@ const Cart = () => {
     setSelectedRoute(null); // Reset selected route
 
     try {
-      const response = await api.get(`/getroutes?city=${city}`);
+      const response = await api.get(`/api/getroutes?city=${city}`);
+      console.log("Fetched routes:", response.data);
       setRoutes(response.data);
     } catch (error) {
       console.error("Error fetching routes:", error);
@@ -70,48 +75,60 @@ const Cart = () => {
       toast.error("No user found. User must be logged in.");
       return;
     }
-
+  
     if (!selectedRoute) {
       toast.error("Please select a route.");
       return;
     }
-
+  
     const orderDate = new Date().toISOString().slice(0, 19).replace("T", " ");
-    const products = cartItems.map((item) => ({
-      ProductID: item.id,
-      Amount: item.quantity,
-    }));
-
+    const orderValue = cartItems.reduce(
+      (acc, item) => acc + item.price * item.quantity,
+      0
+    );
+  
+    const totalVolume = cartItems.reduce(
+      (acc, item) => acc + item.price * item.quantity,
+      0
+    );
+    
     const orderData = {
       customerID: userDetails.customerId,
       orderDate,
       routeID: selectedRoute,
-      value: cartItems.reduce(
-        (acc, item) => acc + item.price * item.quantity,
-        0
-      ),
-      products,
+      value: orderValue,
+      totalVolume,
     };
-
+    
+  
     try {
-      const response = await api.post("/order", orderData);
+      // Send the order data to your backend API to insert into the Orders table
+      const response = await api.post("/api/order", orderData);
       console.log("Order placed successfully:", response.data);
+  
+      // Reset cart state and UI
       setCartItems([]);
-      localStorage.removeItem("cart");
+      localStorage.removeItem(`cart_${userDetails.customerId}`);
       setSelectedCity(""); // Reset selected city
       setRoutes([]); // Clear routes
       setSelectedRoute(null); // Reset selected route
+  
       toast.success("Order placed successfully!");
     } catch (error) {
       console.error("Error placing order:", error);
       toast.error("Error placing order.");
     }
   };
+  
 
   const handleRemoveItem = (id) => {
     const updatedCart = cartItems.filter((item) => item.id !== id);
     setCartItems(updatedCart);
-    localStorage.setItem("cart", JSON.stringify(updatedCart));
+    const userDetails = getUserDetails();
+  if (userDetails) {
+    localStorage.setItem(`cart_${userDetails.customerId}`, JSON.stringify(updatedCart));
+  }
+
     toast.info("Item removed from cart.");
   };
 
@@ -132,7 +149,11 @@ const Cart = () => {
       return item;
     });
     setCartItems(updatedCart);
-    localStorage.setItem("cart", JSON.stringify(updatedCart));
+    const userDetails = getUserDetails();
+    if (userDetails) {
+      localStorage.setItem(`cart_${userDetails.customerId}`, JSON.stringify(updatedCart));
+    }
+
   };
 
   const handleDecreaseQuantity = (id) => {
@@ -143,7 +164,10 @@ const Cart = () => {
       return item;
     });
     setCartItems(updatedCart);
-    localStorage.setItem("cart", JSON.stringify(updatedCart));
+    const userDetails = getUserDetails();
+  if (userDetails) {
+    localStorage.setItem(`cart_${userDetails.customerId}`, JSON.stringify(updatedCart));
+  }
   };
 
   return (
